@@ -1,4 +1,3 @@
-# espanso-package-example
-An example on how to create an espanso package.
+# espanso-package-rbw
+A [rbw](https://github.com/doy/rbw) wrapper based on [espanso](https://espanso.org/)
 
-For more information, read the [documentation](https://espanso.org/docs/)
