@@ -1,0 +1,19 @@
+# Simple package
+
+name: rbw
+parent: default
+
+matches:
+    - trigger: [":rbw", ":bitwarden", ":bw"]
+      replace: "{{password}}"
+      passive_only: true
+      vars:
+          - name: password
+            type: script
+            params:
+                inject_args: true
+                trim: true
+                args:
+                    - sh
+                    - "%CONFIG%/rbw.sh"
+
