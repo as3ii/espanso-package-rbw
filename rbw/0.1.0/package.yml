@@ -4,38 +4,19 @@ name: rbw
 parent: default
 
 matches:
-    - triggers: [":rbw", ":bitwarden", ":bw"]
-      replace: "{{password}}"
-      passive_only: true
-      vars:
-          - name: password
-            type: script
-            params:
-                inject_args: true
-                trim: true
-                args:
-                    - sh
-                    - "%CONFIG%/rbw.sh"
-
     - triggers: ["::rbw", "::bitwarden", "::bw"]
       replace: "{{password}}"
       vars:
           - name: password
-            type: script
+            type: shell
             params:
-                trim: true
-                args:
-                    - sh
-                    - "%CONFIG%/rbw-form.sh"
+                cmd: "sh $HOME/.local/share/espanso/packages/rbw/rbw-form.sh"
 
     - triggers: [":drbw", ":dbitwarden", ":dbw"]
       replace: "{{password}}"
       vars:
           - name: password
-            type: script
+            type: shell
             params:
-                trim: true
-                args:
-                    - sh
-                    - "%CONFIG%/rbw-dmenu.sh"
+                cmd: "sh $HOME/.local/share/espanso/packages/rbw/rbw-dmenu.sh"
 

@@ -9,7 +9,7 @@ entry="$(printf "%s" "$(
     )" | modulo search -i - | sed -e 's/Some("//' -e 's/")//'
 )"
 
-if [ -z "$entry" ]; then
+if [ -z "$entry" || "$entry" == "None"]; then
     exit 1
 else
     printf "%s" "$(rbw get "$entry")"
