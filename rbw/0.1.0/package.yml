@@ -28,3 +28,14 @@ matches:
                     - sh
                     - "%CONFIG%/rbw-form.sh"
 
+    - trigger: [":drbw", ":dbitwarden", ":dbw"]
+      replace: "{{password}}"
+      vars:
+          - name: password
+            type: script
+            params:
+                trim: true
+                args:
+                    - sh
+                    - "%CONFIG%/rbw-dmenu.sh"
+
