@@ -4,7 +4,7 @@ name: rbw
 parent: default
 
 matches:
-    - trigger: [":rbw", ":bitwarden", ":bw"]
+    - triggers: [":rbw", ":bitwarden", ":bw"]
       replace: "{{password}}"
       passive_only: true
       vars:
@@ -17,7 +17,7 @@ matches:
                     - sh
                     - "%CONFIG%/rbw.sh"
 
-    - trigger: ["::rbw", "::bitwarden", "::bw"]
+    - triggers: ["::rbw", "::bitwarden", "::bw"]
       replace: "{{password}}"
       vars:
           - name: password
@@ -28,7 +28,7 @@ matches:
                     - sh
                     - "%CONFIG%/rbw-form.sh"
 
-    - trigger: [":drbw", ":dbitwarden", ":dbw"]
+    - triggers: [":drbw", ":dbitwarden", ":dbw"]
       replace: "{{password}}"
       vars:
           - name: password
