@@ -17,3 +17,14 @@ matches:
                     - sh
                     - "%CONFIG%/rbw.sh"
 
+    - trigger: ["::rbw", "::bitwarden", "::bw"]
+      replace: "{{password}}"
+      vars:
+          - name: password
+            type: script
+            params:
+                trim: true
+                args:
+                    - sh
+                    - "%CONFIG%/rbw-form.sh"
+
