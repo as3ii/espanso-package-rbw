@@ -2,7 +2,7 @@
 
 entry="$(printf "%s" "$(
     printf "title: \"Select an entry\"\nitems:\n"
-    for i in $(rbw ls); do
+    rbw ls | while read -r i; do
         printf "  - id: \"%s\"\n" "$i"
         printf "    label: \"%s\"\n" "$i"
     done
